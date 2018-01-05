@@ -99,6 +99,7 @@ class EntityCrudTest extends ApiTestBase {
     $new_description = 'Refined by Johann Bartsch.';
     $data = [
       'data' => [
+        'type' => 'taxonomy_vocabulary--taxonomy_vocabulary',
         'id' => 'taxonomy_test_vocabulary',
         'attributes' => [
           'description' => $new_description,
@@ -156,6 +157,7 @@ class EntityCrudTest extends ApiTestBase {
     $new_description = 'Smart squid gives lazy lummox who asks for job pen.';
     $data = [
       'data' => [
+        'type' => 'taxonomy_term--im_a_vocab',
         'id' => 'zebra_taxonomy_term',
         'attributes' => [
           'description' => [
