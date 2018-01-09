@@ -37,8 +37,12 @@
             "@drupal-scaffold",
             "PhantomInstaller\\Installer::installPhantomJS"
         ],
+        "post-update-cmd": [
+            "@push",
+            "@drupal-scaffold"
+        ],
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-        "nuke": "rm -r -f docroot vendor",
+        "nuke": "rm -r -f docroot vendor && rm composer.lock",
         "pull": "Acquia\\Lightning\\Commands\\FileCommands::pull",
         "push": "Acquia\\Lightning\\Commands\\FileCommands::push"
     },
