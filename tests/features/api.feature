@@ -1,4 +1,4 @@
-@lightning @api @with-module:api_tests
+@lightning @api @lightning_api @with-module:api_tests
 Feature: JSON API for decoupled applications
 
   @23138ee5
