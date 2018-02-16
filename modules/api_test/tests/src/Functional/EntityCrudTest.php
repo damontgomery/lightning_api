@@ -73,16 +73,15 @@ class EntityCrudTest extends ApiTestBase {
    * API.
    */
   public function testEntities() {
-    $description = 'Created by Carl Linnaeus';
+    $name = 'I\'m a vocab';
     $data = [
       'data' => [
         'type' => 'taxonomy_vocabulary--taxonomy_vocabulary',
         'id' => 'taxonomy_test_vocabulary',
         'attributes' => [
           'uuid' => 'taxonomy_test_vocabulary',
-          'name' => 'I\'m a vocab',
+          'name' => $name,
           'vid' => 'im_a_vocab',
-          'description' => $description,
           'status' => TRUE,
         ]
       ]
@@ -94,15 +93,15 @@ class EntityCrudTest extends ApiTestBase {
     // Read the newly created vocabulary.
     $response = $this->request('/jsonapi/taxonomy_vocabulary/taxonomy_vocabulary/taxonomy_test_vocabulary', 'get', $this->token);
     $body = $this->decodeResponse($response);
-    $this->assertEquals($description, $body['data']['attributes']['description']);
+    $this->assertEquals($name, $body['data']['attributes']['name']);
 
-    $new_description = 'Refined by Johann Bartsch.';
+    $new_name = 'Still a vocab, just different title';
     $data = [
       'data' => [
         'type' => 'taxonomy_vocabulary--taxonomy_vocabulary',
         'id' => 'taxonomy_test_vocabulary',
         'attributes' => [
-          'description' => $new_description,
+          'name' => $new_name,
         ]
       ]
     ];
@@ -113,8 +112,7 @@ class EntityCrudTest extends ApiTestBase {
     // Read the updated vocabulary.
     $response = $this->request('/jsonapi/taxonomy_vocabulary/taxonomy_vocabulary/taxonomy_test_vocabulary', 'get', $this->token);
     $body = $this->decodeResponse($response);
-    $this->assertEquals('I\'m a vocab', $body['data']['attributes']['name']);
-    $this->assertEquals($new_description, $body['data']['attributes']['description']);
+    $this->assertEquals($new_name, $body['data']['attributes']['name']);
 
     // Assert that the newly created vocabulary's endpoint is reachable.
     // @todo figure out why we need to rebuild caches for it to be available.
@@ -122,18 +120,14 @@ class EntityCrudTest extends ApiTestBase {
     $response = $this->request('/jsonapi/taxonomy_term/im_a_vocab');
     $this->assertEquals(200, $response->getStatusCode());
 
-    $description = 'How quickly deft jumping zebras vex.';
+    $name = 'zebra';
     $data = [
       'data' => [
         'type' => 'taxonomy_term--im_a_vocab',
         'id' => 'zebra_taxonomy_term',
         'attributes' => [
-          'name' => 'zebra',
+          'name' => $name,
           'uuid' => 'zebra_taxonomy_term',
-          'description' => [
-            'value' => $description,
-            'format' => 'rich_text',
-          ]
         ],
         'relationships' => [
           'vid' => [
@@ -152,17 +146,15 @@ class EntityCrudTest extends ApiTestBase {
     // Read the taxonomy term.
     $response = $this->request('/jsonapi/taxonomy_term/im_a_vocab/zebra_taxonomy_term', 'get', $this->token);
     $body = $this->decodeResponse($response);
-    $this->assertEquals($description, $body['data']['attributes']['description']['value']);
+    $this->assertEquals($name, $body['data']['attributes']['name']);
 
-    $new_description = 'Smart squid gives lazy lummox who asks for job pen.';
+    $new_name = 'squid';
     $data = [
       'data' => [
         'type' => 'taxonomy_term--im_a_vocab',
         'id' => 'zebra_taxonomy_term',
         'attributes' => [
-          'description' => [
-            'value' => $new_description,
-          ]
+          'name' => $new_name,
         ]
       ]
     ];
@@ -173,8 +165,7 @@ class EntityCrudTest extends ApiTestBase {
     // Read the updated taxonomy term.
     $response = $this->request('/jsonapi/taxonomy_term/im_a_vocab/zebra_taxonomy_term', 'get', $this->token);
     $body = $this->decodeResponse($response);
-    $this->assertSame('zebra', $body['data']['attributes']['name']);
-    $this->assertSame($new_description, $body['data']['attributes']['description']['value']);
+    $this->assertSame($new_name, $body['data']['attributes']['name']);
   }
 
 }
