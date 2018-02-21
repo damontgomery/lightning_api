@@ -1,5 +1,7 @@
 ## 1.0.0-rc2
-* Security updated JSON API to version 1.10.0. (SA-CONTRIB-2018-15)
+* Security updated JSON API to version 1.10.0. (SA-CONTRIB-2018-15)  
+  **Note:** This update has caused parts of our Config Entity CRUD test to fail
+  so you might have trouble interacting with config entities via tha API.  
 
 ## 1.0.0-rc1
 * Update JSON API to 1.7.0 (Issue #2933279)
