@@ -26,8 +26,7 @@
         }
     },
     "require-dev": {
-        "acquia/lightning_dev": "dev-8.x-1.x",
-        "drupal/console": "^1.8"
+        "acquia/lightning_dev": "dev-8.x-1.x"
     },
     "require": {
         "drupal/lightning_core": "2.x-dev",
