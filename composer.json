@@ -33,7 +33,7 @@
         "cweagans/composer-patches": "^1.6.4",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "oomphinc/composer-installers-extender": "^1.1",
-        "drupal/jsonapi": "1.16",
+        "drupal/jsonapi": "1.19",
         "drupal/openapi": "1.0-alpha1",
         "drupal/simple_oauth": "^3.8.0"
     },
@@ -75,6 +75,12 @@
             "docroot/themes/contrib/{$name}": [
                 "type:drupal-theme"
             ]
+        },
+        "patches": {
+            "drupal/core": {
+                "2977882 - Term entity type's \"parent\" field does not specify \"target_bundles\" setting: a term from *any* vocabulary can be chosen":
+                "https://www.drupal.org/files/issues/2018-06-06/2977882-2.patch"
+            }
         },
         "enable-patching": true
     }
