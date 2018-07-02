@@ -1,7 +1,7 @@
 ## 2.4.0
-* Updated and unpinned JSON API to 1.22.0.
+* Updated and unpinned JSON API to ^1.22.0.
 * Updated Simple OAuth to 3.8.0.
-* Updated and unpinned Open API to 1.0.0-beta1.
+* Updated and unpinned Open API to ^1.0.0-beta1.
 
 ## 2.3.0
 * Updated Simple OAuth to 3.6.
