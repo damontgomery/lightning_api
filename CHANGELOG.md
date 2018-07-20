@@ -1,3 +1,6 @@
+## 2.5.0
+* Allow Lightning Core 3.x and Drupal core 8.6.x.
+
 ## 2.4.0
 * Updated and unpinned JSON API to ^1.22.0.
 * Updated Simple OAuth to 3.8.0.
