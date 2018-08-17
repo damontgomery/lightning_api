@@ -5,5 +5,7 @@ package: Lightning
 description: 'Progressive decoupling? No problem.'
 dependencies:
   - jsonapi
-  - openapi_redoc
+  - openapi
+  - openapi_ui_redoc
+  - openapi_ui_swagger
   - simple_oauth_extras
