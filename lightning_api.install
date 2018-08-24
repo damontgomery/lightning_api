@@ -2,6 +2,7 @@
 
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Url;
+use Drupal\views\Entity\View;
 
 /**
  * Implements hook_install().
@@ -29,6 +30,11 @@ function lightning_api_install() {
         '/api-docs'
       );
     }
+  }
+
+  // Ensure the 'Include destination' is always set to FALSE.
+  if (!\Drupal::isConfigSyncing()) {
+    lightning_api_update_8301();
   }
 }
 
@@ -96,4 +102,28 @@ function lightning_api_update_dependencies() {
       ],
     ],
   ];
+}
+
+/**
+ * Changes the 'Content' view's 'Operations' field's 'Include destination'
+ * setting to FALSE.
+ *
+ * If the 'Include destination' is set to TRUE, it will force every operation
+ * to have the 'destination' query parameter. This causes a problem with the
+ * latest (2.0) JSON API module, making the 'View JSON' operation throw a
+ * bad request http exception.
+ */
+function lightning_api_update_8301() {
+  $view = View::load('content');
+  if (!$view) {
+    return;
+  }
+
+  $display = &$view->getDisplay('default');
+  if (!isset($display['display_options']['fields']['operations']['destination'])) {
+    return;
+  }
+
+  $display['display_options']['fields']['operations']['destination'] = FALSE;
+  $view->save();
 }

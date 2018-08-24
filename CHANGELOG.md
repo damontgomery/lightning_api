@@ -1,3 +1,6 @@
+## 3.0.0
+* Updated JSON API to 2.0.
+
 ## 2.5.0
 * Allow Lightning Core 3.x and Drupal core 8.6.x.
 
