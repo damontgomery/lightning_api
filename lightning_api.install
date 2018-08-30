@@ -83,6 +83,11 @@ function lightning_api_update_8300() {
       ->clear('module.openapi_redoc')
       ->clear('module.openapi_swagger_ui')
       ->save();
+
+    Drupal::keyValue('system.schema')->deleteMultiple([
+      'openapi_redoc',
+      'openapi_swagger_ui',
+    ]);
   }
 
   $module_installer->install([
