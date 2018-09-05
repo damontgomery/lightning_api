@@ -32,7 +32,7 @@ function lightning_api_install() {
     }
   }
 
-  // Ensure the 'Include destination' is always set to FALSE.
+  // Disable the content view's 'Include destination' switch.
   if (!\Drupal::isConfigSyncing()) {
     lightning_api_update_8301();
   }
@@ -97,6 +97,24 @@ function lightning_api_update_8300() {
 }
 
 /**
+ * Changes the 'Content' view's 'Operations' field's 'Include destination'
+ * setting to FALSE.
+ *
+ * @see lightning_api_view_presave()
+ */
+function lightning_api_update_8301() {
+  if (! Drupal::moduleHandler()->moduleExists('views')) {
+    return;
+  }
+
+  $view = View::load('content');
+  if ($view) {
+    lightning_api_view_presave($view->enforceIsNew());
+    $view->enforceIsNew(FALSE)->save();
+  }
+}
+
+/**
  * Implements hook_update_dependencies().
  */
 function lightning_api_update_dependencies() {
@@ -107,28 +125,4 @@ function lightning_api_update_dependencies() {
       ],
     ],
   ];
-}
-
-/**
- * Changes the 'Content' view's 'Operations' field's 'Include destination'
- * setting to FALSE.
- *
- * If the 'Include destination' is set to TRUE, it will force every operation
- * to have the 'destination' query parameter. This causes a problem with the
- * latest (2.0) JSON API module, making the 'View JSON' operation throw a
- * bad request http exception.
- */
-function lightning_api_update_8301() {
-  $view = View::load('content');
-  if (!$view) {
-    return;
-  }
-
-  $display = &$view->getDisplay('default');
-  if (!isset($display['display_options']['fields']['operations']['destination'])) {
-    return;
-  }
-
-  $display['display_options']['fields']['operations']['destination'] = FALSE;
-  $view->save();
 }

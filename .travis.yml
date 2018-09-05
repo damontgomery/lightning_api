@@ -52,7 +52,7 @@ install:
   - composer install
   # Install on top of Standard for testing, then export config and reinstall
   # from that to ensure that the exported config is coherent.
-  - lightning install "mysql\://lightning:lightning@127.0.0.1/lightning" standard 'http://127.0.0.1:8080' --from-config
+  - lightning install "mysql\://lightning:lightning@127.0.0.1/lightning" minimal 'http://127.0.0.1:8080' --from-config
   # Restore database fixture from the version we're testing and run database and
   # and Lightning config updates.
   - lightning update $VERSION
