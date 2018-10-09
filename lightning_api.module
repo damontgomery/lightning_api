@@ -89,7 +89,7 @@ function lightning_api_entity_json(EntityInterface $entity) {
       \Drupal::service('router.route_provider')->getRouteByName($route);
 
       return Url::fromRoute($route, [
-        $resource_type->getEntityTypeId() => $uuid,
+        'entity' => $uuid,
       ]);
     }
     catch (RouteNotFoundException $e) {
