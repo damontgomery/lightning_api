@@ -1,5 +1,5 @@
 imports:
-  - 'docroot/modules/contrib/lightning_core/behat.yml'
+  - 'docroot/modules/contrib/acquia/lightning_core/behat.yml'
 
 default:
   suites:
