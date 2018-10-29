@@ -10,4 +10,5 @@ default:
         - '\Drupal\DrupalExtension\Context\DrupalContext'
         - '\Drupal\DrupalExtension\Context\MinkContext'
         - '\Drupal\DrupalExtension\Context\MessageContext'
-        - '\Drupal\DrupalExtension\Context\DrushContext'
+        - '\Drupal\Tests\lightning_core\FixtureContext'
+        - '\Drupal\Tests\lightning_api\FixtureContext'

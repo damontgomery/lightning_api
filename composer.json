@@ -23,6 +23,11 @@
             "drupal/core": "dist"
         }
     },
+    "autoload": {
+        "psr-4": {
+            "Drupal\\Tests\\lightning_api\\": "tests/src"
+        }
+    },
     "extra": {
         "enable-patching": true,
         "installer-paths": {

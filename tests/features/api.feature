@@ -1,9 +1,9 @@
-@lightning @api @lightning_api @with-module:api_tests
+@lightning @api @lightning_api
 Feature: JSON API for decoupled applications
 
   @23138ee5
   Scenario: Viewing a content entity as JSON
-    Given I am logged in as a user with the administrator role
+    Given I am logged in as an administrator
     And page content:
       | title  |
       | Foobar |
@@ -13,7 +13,7 @@ Feature: JSON API for decoupled applications
 
   @160f8533
   Scenario Outline: Viewing a config entity as JSON
-    Given I am logged in as a user with the administrator role
+    Given I am logged in as an administrator
     When I visit "<url>"
     And I click "View JSON"
     Then the response status code should be 200
@@ -25,13 +25,13 @@ Feature: JSON API for decoupled applications
 
   @c7366331
   Scenario: Accessing documentation on path alias
-    Given I am logged in as a user with the administrator role
+    Given I am logged in as an administrator
     When I visit "/api-docs"
     Then the response status code should be 200
 
   @5255d0d7
   Scenario: Viewing content type documentation
-    Given I am logged in as a user with the administrator role
+    Given I am logged in as an administrator
     When I visit "/admin/structure/types"
     And I click "View API documentation"
     Then the response status code should be 200
