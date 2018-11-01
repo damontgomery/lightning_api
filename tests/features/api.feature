@@ -12,16 +12,11 @@ Feature: JSON API for decoupled applications
     Then the response status code should be 200
 
   @160f8533
-  Scenario Outline: Viewing a config entity as JSON
+  Scenario: Viewing a config entity as JSON
     Given I am logged in as an administrator
-    When I visit "<url>"
+    When I visit "/admin/structure/types"
     And I click "View JSON"
     Then the response status code should be 200
-
-    Examples:
-      | url                      |
-      | /admin/structure/types   |
-      | /admin/structure/views   |
 
   @c7366331
   Scenario: Accessing documentation on path alias
