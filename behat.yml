@@ -5,7 +5,7 @@ default:
   suites:
     lightning_api:
       paths:
-        - 'tests/features'
+        - 'docroot/modules/contrib/acquia/lightning_api/tests/features'
       contexts:
         - '\Drupal\DrupalExtension\Context\DrupalContext'
         - '\Drupal\DrupalExtension\Context\MinkContext'

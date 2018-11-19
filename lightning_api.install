@@ -115,6 +115,13 @@ function lightning_api_update_8301() {
 }
 
 /**
+ * Installs Lightning Core.
+ */
+function lightning_api_update_8302() {
+  Drupal::service('module_installer')->install(['lightning_core']);
+}
+
+/**
  * Implements hook_update_dependencies().
  */
 function lightning_api_update_dependencies() {

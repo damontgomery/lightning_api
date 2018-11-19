@@ -57,6 +57,8 @@ install:
   - lightning update $VERSION
 
 before_script:
+  # Big Pipe can interfere with non-JavaScript functional tests, so disable it.
+  - drush pm-uninstall --yes big_pipe
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - google-chrome-stable --headless --disable-gpu --no-sandbox --remote-debugging-port=9222 http://localhost &
   - cp -f phpunit.xml docroot/core
@@ -64,7 +66,7 @@ before_script:
 script:
   - composer validate composer.json --no-check-all --ansi --no-interaction
   - phpunit --config docroot/core --group lightning_api
-  - behat --suite lightning_api
+  - behat
 
 after_failure:
   - cd docroot

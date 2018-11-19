@@ -4,7 +4,7 @@ Feature: JSON API for decoupled applications
   @23138ee5
   Scenario: Viewing a content entity as JSON
     Given I am logged in as an administrator
-    And page content:
+    And test content:
       | title  |
       | Foobar |
     When I visit "/admin/content"
