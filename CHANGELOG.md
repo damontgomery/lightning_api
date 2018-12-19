@@ -1,3 +1,6 @@
+## 3.1.0
+* Security updated JSON API to 2.0-rc4.
+
 ## 3.0.0
 * Updated JSON API to 2.0.
 
