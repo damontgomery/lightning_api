@@ -14,7 +14,6 @@ use Drupal\consumers\Entity\Consumer;
  * @group lightning_api
  * @group headless
  * @group api_test
- * @group orca_public
  */
 class EntityCrudTest extends ApiTestBase {
 

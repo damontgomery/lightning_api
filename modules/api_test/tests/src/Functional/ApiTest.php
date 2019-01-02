@@ -13,7 +13,6 @@ use GuzzleHttp\Exception\ClientException;
  * @group lightning_api
  * @group headless
  * @group api_test
- * @group orca_public
  */
 class ApiTest extends ApiTestBase {
 

@@ -61,7 +61,7 @@ before_script:
   - cd ../../orca
 
 script:
-  - ./bin/orca tests:run
+  - ./bin/orca tests:run --sut drupal/lightning_api --sut-only
 
 after_failure:
   - cd docroot
