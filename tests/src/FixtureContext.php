@@ -18,6 +18,13 @@ final class FixtureContext extends FixtureBase {
       ->set('bundle_docs', TRUE)
       ->save();
 
+    // If Lightning Core's FixtureContext created the test content type before
+    // now, react to it retroactively.
+    $node_type = entity_load('node_type', 'test');
+    if ($node_type) {
+      lightning_api_entity_insert($node_type);
+    }
+
     $this->container->get('entity_type.bundle.info')->clearCachedBundles();
   }
 
