@@ -5,9 +5,9 @@ package: Lightning
 description: 'Progressive decoupling? No problem.'
 configure: lightning_api.settings
 dependencies:
-  - jsonapi
-  - lightning_core
-  - openapi
-  - openapi_ui_redoc
-  - openapi_ui_swagger
-  - simple_oauth_extras
+  - jsonapi:jsonapi
+  - lightning_core:lightning_core
+  - openapi:openapi
+  - openapi_ui_redoc:openapi_ui_redoc
+  - openapi_ui_swagger:openapi_ui_swagger
+  - simple_oauth:simple_oauth_extras
