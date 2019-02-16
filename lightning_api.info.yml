@@ -3,6 +3,7 @@ core: 8.x
 type: module
 package: Lightning
 description: 'Progressive decoupling? No problem.'
+configure: lightning_api.settings
 dependencies:
   - jsonapi
   - lightning_core
