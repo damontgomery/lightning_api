@@ -1,3 +1,8 @@
+## 3.4.0
+* Updated Lightning Core to 2.13 or 3.7, which security update Drupal core to
+  8.5.11 and 8.6.10, respectively.
+* Security updated JSON API to 2.3 (SA-CONTRIB-2019-019).
+
 ## 3.3.0
 * Updated JSON:API to 2.1, which includes support for revisions and file uploads.
   JSON:API 2.1 release notes are available at https://www.drupal.org/project/jsonapi/releases/8.x-2.1
