@@ -1,3 +1,7 @@
+## 3.5.0
+* Updated Consumers module to 1.9 and unpin its Composer constraint.
+* Allow Lightning Core 4.x and Drupal core 8.7.x.
+
 ## 3.4.0
 * Updated Lightning Core to 2.13 or 3.7, which security update Drupal core to
   8.5.11 and 8.6.10, respectively.
