@@ -7,8 +7,7 @@
         "cweagans/composer-patches": "^1.6.4",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "drupal/consumers": "^1.9",
-        "drupal/jsonapi": "^2.3",
-        "drupal/lightning_core": "2.x-dev || 3.x-dev || 4.x-dev",
+        "drupal/lightning_core": "4.x-dev",
         "drupal/openapi": "^1.0-beta2",
         "drupal/openapi_ui_redoc": "^1.0",
         "drupal/openapi_ui_swagger": "^1.0",
@@ -26,7 +25,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-8.x-3.x": "3.x-dev"
+            "dev-8.x-4.x": "4.x-dev"
         },
         "enable-patching": true,
         "installer-paths": {
