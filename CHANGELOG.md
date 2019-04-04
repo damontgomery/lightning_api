@@ -1,3 +1,7 @@
+## 4.0.0-beta1
+* Updated Lightning Core to 4.0.0-beta1, which requires Drupal core 8.7.0 and replaces the
+  contributed JSON:API module with the core version.
+
 ## 3.5.0
 * Updated Consumers module to 1.9 and unpin its Composer constraint.
 * Allow Lightning Core 4.x and Drupal core 8.7.x.
