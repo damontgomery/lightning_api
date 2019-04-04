@@ -53,7 +53,7 @@ install:
   - orca static-analysis:run ./
 
   # Use ORCA to build the code base.
-  - orca fixture:init -f --sut $ORCA_SUT_NAME --core ~8.7.0 $ORCA_FIXTURE_FLAGS
+  - orca fixture:init -f --sut $ORCA_SUT_NAME --core 8.7.x-dev $ORCA_FIXTURE_FLAGS
 
 before_script:
   - cd $ORCA_FIXTURE/docroot
