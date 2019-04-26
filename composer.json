@@ -55,7 +55,10 @@
     "autoload": {
         "psr-4": {
             "Drupal\\Tests\\lightning_api\\": "tests/src"
-        }
+        },
+        "classmap": [
+            "src/LightningApiServiceProvider.php"
+        ]
     },
     "repositories": {
         "drupal": {
