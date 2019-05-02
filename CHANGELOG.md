@@ -1,3 +1,8 @@
+## 4.1.0
+* Fixed an issue in the module info file dependencies that could lead to the
+  contrib JSON:API module being used instead of the one provided by core in 8.7.
+  (Issue #3052073)
+
 ## 4.0.0
 * Updated Lightning Core to 4.0.0, which requires Drupal core 8.7.0 and replaces
   the contributed JSON:API module with the core version.
