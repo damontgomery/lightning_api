@@ -6,8 +6,8 @@
     "require": {
         "cweagans/composer-patches": "^1.6.4",
         "drupal-composer/drupal-scaffold": "^2.0.0",
-        "drupal/consumers": "^1.9",
-        "drupal/lightning_core": "4.x-dev",
+        "drupal/consumers": "1.9",
+        "drupal/lightning_core": "4.*",
         "drupal/openapi": "^1.0-beta2",
         "drupal/openapi_ui_redoc": "^1.0",
         "drupal/openapi_ui_swagger": "^1.0",
@@ -50,7 +50,12 @@
         "installer-types": [
             "bower-asset",
             "npm-asset"
-        ]
+        ],
+        "patches": {
+            "drupal/consumers": {
+                "3052959 - Update 8103 does not work with Drupal 8.7": "https://www.drupal.org/files/issues/2019-05-17/3052959-12.patch"
+            }
+        }
     },
     "autoload": {
         "psr-4": {
