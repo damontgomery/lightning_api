@@ -16,8 +16,8 @@ env:
   global:
     - ORCA_SUT_NAME=drupal/lightning_api
     - ORCA_SUT_BRANCH=8.x-4.x
-    - ORCA_VERSION=v1.0.0-alpha13
-    - ORCA_PACKAGES_CONFIG_ALTER=../lightning-api/tests/packages_alter.yml
+    - ORCA_VERSION=v1.0.0-alpha16
+    - ORCA_PACKAGES_CONFIG_ALTER=../lightning_api/tests/packages_alter.yml
 
 matrix:
   fast_finish: true
@@ -38,10 +38,11 @@ matrix:
     - env: ORCA_JOB=DEPRECATED_CODE_SCAN_CONTRIB
     - env: ORCA_JOB=INTEGRATED_DEV
     - env: ORCA_JOB=CORE_NEXT
+    # Temporary allowances.
+    - env: ORCA_JOB=STATIC_CODE_ANALYSIS
     # Lightning API 4.x is incompatible with Drupal Core 8.6, because it depends
     # on the JSON API modules in Core, added in 8.7.
     # @todo Remove this allowance once Drupal 8.7 is the "previous" version.
-    # Temporary allowances.
     - env: ORCA_JOB=CORE_PREVIOUS
 
 before_install:
@@ -56,4 +57,10 @@ before_script: ../orca/bin/travis/before_script.sh
 
 script: ../orca/bin/travis/script.sh
 
+before_cache: ../orca/bin/travis/before_cache.sh
+
+after_success: ../orca/bin/travis/after_success.sh
+
 after_failure: ../orca/bin/travis/after_failure.sh
+
+after_script: ../orca/bin/travis/after_script.sh

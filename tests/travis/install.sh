@@ -28,7 +28,7 @@ drush php:script "$TRAVIS_BUILD_DIR/tests/update.php"
 drush updatedb --yes
 drush update:lightning --no-interaction --yes
 
-orca fixture:enable-modules
+orca fixture:enable-extensions
 
 # Reinstall from exported configuration to prove that it's coherent.
 drush config:export --yes
