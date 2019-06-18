@@ -1,3 +1,8 @@
+## 4.2.0
+* Updated Simple OAuth to 3.16.
+* Many changes to underlying testing infrastructure, but nothing
+  that should affect users to Lightning API.
+
 ## 4.1.0
 * Fixed an issue in the module info file dependencies that could lead to the
   contrib JSON:API module being used instead of the one provided by core in 8.7.
