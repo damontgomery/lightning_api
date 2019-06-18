@@ -1,5 +1,6 @@
 ## 4.2.0
 * Updated Simple OAuth to 3.16.
+* Updated OpenAPI to 1.0-beta3.
 * Many changes to underlying testing infrastructure, but nothing
   that should affect users to Lightning API.
 
