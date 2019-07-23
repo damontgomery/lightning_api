@@ -1,3 +1,6 @@
+## 4.3.0
+* Updated OpenAPI to 1.0-beta6.
+
 ## 4.2.0
 * Updated Simple OAuth to 3.16.
 * Updated OpenAPI to 1.0-beta3.
