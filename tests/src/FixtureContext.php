@@ -2,8 +2,8 @@
 
 namespace Drupal\Tests\lightning_api;
 
-use Drupal\Tests\lightning_core\FixtureBase;
 use Drupal\node\Entity\NodeType;
+use Drupal\Tests\lightning_core\FixtureBase;
 
 /**
  * Performs set-up and tear-down tasks before and after each test scenario.
