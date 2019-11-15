@@ -1,4 +1,11 @@
+## 4.4.0
+There are no user-facing changes in this version.
+
+## 2.3.0
+* Updated Simple OAuth to 3.6.
+
 ## 4.3.0
+* Added support for Drupal core 8.8.x.
 * Updated OpenAPI to 1.0-beta6.
 
 ## 4.2.0
@@ -52,9 +59,6 @@
 * Updated and unpinned JSON API to ^1.22.0.
 * Updated Simple OAuth to 3.8.0.
 * Updated and unpinned Open API to ^1.0.0-beta1.
-
-## 2.3.0
-* Updated Simple OAuth to 3.6.
 
 ## 2.2.0
 * Security updated JSON API to 1.16 (SA-CONTRIB-2018-021)
